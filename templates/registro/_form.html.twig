@@ -1,0 +1,475 @@
+{{ form_start(form) }}
+<div class="container">
+    <div class="alert alert-light " role="alert">
+        <h4 class="alert-heading"><i class="fa-solid fa-triangle-exclamation"></i> Importante</h4>
+        <ul class="pt-2">
+            <li><p>Se enviará un correo a la profesora o profesor que te recomienda para solicitarle que nos proporcione tu carta de recomendación,
+                    por lo que debes asegurarte de escribir correctamente su dirección de correo.</p></li>
+            <li><p>Al finalizar el envío de este formulario debes de visualizar una pantalla de confirmación. Además, recibirás un correo
+                    electrónico a la cuenta que proporcionaste, de no ser así favor de revisar tu carpeta de correos no deseados o comunicarte
+                    al correo <mark>webmaster<i class="fa-solid fa-at"></i>matmor.unam.mx</mark> para asegurarte que hayamos recibido tu solicitud.</p></li>
+        </ul>
+        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <i class="fa-solid fa-link"></i> Aviso de privacidad
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Aviso de Privacidad</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Aviso de Privacidad Simplificado del Centro de Ciencias Matemáticas de la UNAM.</h5>
+                        <p class="mt-3">El Centro de Ciencias Matemáticas de la UNAM, es responsable del tratamiento de sus datos personales
+                            para el registro de usted en calidad de alumno, docente, personal de la entidad académica,
+                            conferencista o invitado externo (nacional o extranjero), visitante, proveedor o cliente de servicios universitarios.
+                        </p>
+                        <p>
+                            Para cumplir las finalidades necesarias anteriormente descritas u otras aquellas exigidas
+                            legalmente o por las autoridades competentes podrá transferir sus datos personales.
+                            Podrá ejercer sus derechos ARCO en la Unidad de Transparencia de la UNAM, o a través de
+                            la Plataforma Nacional de Transparencia:
+                            <a href="https://www.plataformadetransparencia.org.mx/" target="_blank">
+                                https://www.plataformadetransparencia.org.mx
+                            </a>
+                        </p>
+                        <p>
+                        El aviso de privacidad integral se puede consultar en la siguiente dirección web:
+                            <a href="https://matmor.unam.mx/AvisoPrivacidad-CCM.pdf" target="_blank">
+                                Aviso de Privacidad Integral del CCM
+                            </a>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="mb-0">
+            <i class="fa-solid fa-calendar"></i> Fecha límite para realizar tu registro: <mark>29 de mayo de 2025</mark>.
+        </p>
+    </div>
+    <p class="h4">Datos personales</p>
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.nombre, {
+                label: 'Nombre',
+                attr: {
+                    placeholder: 'Nombre'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.paterno, {
+                label: 'Apellido paterno',
+                attr: {
+                    placeholder: 'Apellido paterno'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.materno, {
+                label: 'Apellido materno',
+                attr: {
+                    placeholder: 'Name'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+    </div>
+    <div class="row pt-2">
+        <p class="text-secondary">La información del campo sexo es requerida con fines de la asignación de habitación ya que es compartida.</p>
+        <div class="col col-md-4 col-sm-12  ">
+            {{ form_row(form.sexo, {
+                label: 'Sexo',
+                attr: {
+                    placeholder: 'Sexo'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.nacimiento, {
+                label: 'Fecha de Nacimiento',
+                attr: {
+                    placeholder: 'Fecha de nacimiento'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+    </div>
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.mail.first, {
+                label: 'Correo electrónico',
+                attr: {
+                    placeholder: 'Correo'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.mail.second, {
+                label: 'Confirma correo electrónico',
+                attr: {
+                    placeholder: 'Correo'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+    </div>
+    <hr>
+    <p class="h4">Datos académicos</p>
+
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.procedencia, {
+                label: 'Universidad de procedencia',
+                attr: {
+                    placeholder: 'Universidad de Procedencia'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.carrera, {
+                label: 'Carrera',
+                attr: {
+                    placeholder: 'Carrera'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.semestre, {
+                label: 'Semestre o cuatrimestre',
+                attr: {
+                    placeholder: 'Semestre'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+
+    </div>
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.porcentaje, {
+                label: 'Porcentaje de avance (hasta marzo 2024)',
+                attr: {
+                    placeholder: 'Porcentaje de avance (hasta marzo 2024)'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.promedio, {
+                label: 'Promedio',
+                attr: {
+                    placeholder: 'Promedio'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col-md-12 mt-3" >
+            <p class="text-secondary">{{ form_label(form.caliFile) }}</p>
+            <div class="col-md-6">{{ form_widget(form.caliFile) }}</div>
+            <div class="col-md-6">{{ form_errors(form.caliFile) }}</div>
+        </div>
+    </div>
+    <div class="row pt-2 ">
+
+        <div class="col-md-12 mt-3" >
+            <p class="text-secondary">En caso de ser alumno o alumna de la UNAM, adjuntar copia de tu credencial UNAM.
+                En caso contrario haga caso omiso a este paso.</p>
+
+            <div class="col-md-6">{{ form_widget(form.credencialFile) }}</div>
+            <div class="col-md-6">{{ form_errors(form.credencialFile) }}</div>
+        </div>
+    </div>
+
+
+    <div class="row pt-3">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.profesor, {
+                label: 'Profesor(a) que recomienda su participación',
+                attr: {
+                    placeholder: 'Profesor(a) que recomienda su participación'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.univprofesor, {
+                label: 'Universidad del profesor o profesora',
+                attr: {
+                    placeholder: 'Universidad del profesor'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+    </div>
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.mailprofesor.first, {
+                label: 'Correo del profesor o profesora',
+                attr: {
+                    placeholder: 'Correo del profesor o profesora'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.mailprofesor.second, {
+                label: 'Confirma correo del profesor o profesora',
+                attr: {
+                    placeholder: 'Correo del profesor o profesora'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+    </div>
+    <hr>
+    <p class="h4">{{ evento }}</p>
+
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.beca, {
+                label: 'Beca',
+                attr: {
+                    placeholder: 'Beca'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+
+        <div class="col col-md-8 col-sm-8" id="div_registro_vegetariano">
+            {{ form_row(form.restricciones, {
+                label: 'Mencionar si tienes alguna restricción alimenticia',
+                attr: {
+                    placeholder: 'Mencionar si tienes alguna restricción alimenticia',
+                },
+                row_attr: {
+                    class: 'form-floating',
+                    id: 'registro_vegetariano',
+                }
+            }) }}
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+        <p class="text-secondary">Como participante deberá tomar cuatro cursos en total, dos obligatorios (C1 y C2) y
+            dos optativos a elección. Las opciones para elegir los cursos optativos son las siguientes:</p>
+
+        <div class="col col-md-6">
+            {{ form_row(form.curso1, {
+                label: 'Selecciona tu curso optativo',
+                attr: {
+                    placeholder: 'Curso optativo',
+                },
+                row_attr: {
+                    class: 'form-floating',
+                }
+            }) }}
+        </div>
+        <div class="col col-md-6 pt-3">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalC1">
+                Consultar cursos
+            </button>
+        </div>
+        <div class="col col-md-6">
+            {{ form_row(form.curso2, {
+                label: 'Selecciona tu curso optativo',
+                attr: {
+                    placeholder: 'Curso optativo',
+                },
+                row_attr: {
+                    class: 'form-floating',
+                }
+            }) }}
+        </div>
+        <div class="col col-md-6 pt-3">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalC2">
+                Consultar cursos
+            </button>
+        </div>
+    </div>
+
+    <div class="row pt-2">
+        <div class="col col-md-12">
+            {{ form_row(form.razones, {
+                label: 'Razones y motivos por las que desea asisitir, mínimo 300 caracteres y máximo 800 caracteres.',
+                attr: {
+                    placeholder: 'Razones y motivos por las que desa asistir',
+                },
+                row_attr: {
+                    class: 'form-floating ',
+                },
+            }) }}
+             <p id="demo"></p>
+        <div style="margin-top: 0.25rem; text-align: right" id="counter">0</div>
+        </div>
+
+
+    <div class="d-grid gap-2 pt-3 mb-2 col-3 mx-auto">
+        <button class="btn btn-dark"><h5> <i class="fa-regular fa-paper-plane"></i> {{ button_label|default('Enviar') }}</h5></button>
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal C1-->
+<div class="modal fade" id="exampleModalC1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Curso optativo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="h6">C3: Las sumas trigonométricas y aplicaciones, <em class="h6 text-secondary">Moubariz Garaev</em></p>
+                <p style="text-align: justify;">
+                    Resumen: Las sumas trigonométricas y sus estimaciones no triviales son una herramienta básica en la teoría analítica
+                    de números que se utiliza para tratar desde problemas aditivos (problema de Waring, problema de Goldbach) hasta el
+                    problema de la distribución de los ceros de la función zeta de Riemann. En este curso vamos a aprender cómo usar las
+                    sumas trigonométricas para obtener resultados en teoría de números y combinatoria aditiva.
+                </p>
+                  <p class="h6">C4: Un toro con su mapa incursionando en el análisis matemático, <em class="h6 text-secondary">Daniel Pellicer</em></p>
+                <p style="text-align: justify;">
+                    Resumen: En el toro 2-dimensional hay dos mapas que satisfacen las siguientes propiedades:
+                    <ol>
+                        <li>Todas las caras del mapa tienen el mismo número de lados.</li>
+                        <li>Cada cara del mapa tiene una frontera común con cada una de las demás caras del mapa.</li>
+                    </ol>
+                    Estos mapas se conocen desde hace mucho, y se han estudiado desde la combinatoria (encajes de gráficas),
+                    la geometría (cocientes de teselaciones bajo grupos de simetrías) y el álgebra (teoría de grupos).
+                </p>
+                <p style="text-align: justify;">
+                    Cuando uno estudia estos mapas con más detenimiento y juega un poco con ellos, también aparecen objetos
+                    interesantes desde el punto de vista del análisis. En este curso mencionaremos dos de ellos. En primer
+                    lugar, hablaremos de regiones cuya frontera es fractal. En segundo lugar, hablaremos de una teselación
+                    con las propiedades antes mencionadas de un toro de dimensión infinita.
+                </p>
+                <p style="text-align: justify;">
+                    Dependiendo del tiempo es posible que también platiquemos del anillo de cuaternios sobre los reales
+                     y su relación con este tipo de mapas en el toro.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal C2-->
+<div class="modal fade" id="exampleModalC2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Curso optativo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <p class="h6">C5: Introducción a la combinatoria topológica, <em class="h6 text-secondary">Andrés Carnero</em></p>
+                <p style="text-align: justify;">
+                    Resumen: El objetivo de este curso es dar una introducción a la topología algebraica y sus aplicaciones en
+                    combinatoria. Veremos la equivalencia entre algunos resultados clásicos de topología algebraica y resultados
+                    de combinatoria, por ejemplo, la equivalencia entre el Teorema del punto fijo de Brouwer y el Lema de Sperner.
+                </p>
+                 <p class="h6">C6: El fenómeno de continuidad automática, <em class="h6 text-secondary">Ariet Ramos</em></p>
+                <p style="text-align: justify;">
+                    Resumen: Introducir al alumno al tema de continuidad automática en grupos polacos y sus aplicaciones
+                    al estudio de fenómenos de rigidez en grupos de homeomorfismos y difeomorfismos de variedades a través de
+                     los diversos resultados que existen en la literatura especializada. Establecer algunos problemas abiertos
+                      en el tema así como los resultados parciales existentes para dar respuesta a dichos problemas
+                </p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{ form_widget(form) }}
+
+
+{{ form_end(form) }}
+
+    {% block javascripts %}
+        <script>
+            function myFunction() {
+                document.getElementById("registro_razones").maxLength = "800";
+            }
+
+            const messageEle = document.getElementById('registro_razones');
+            const counterEle = document.getElementById('counter');
+            let color;
+
+            ["click", "input"].forEach((event) => { messageEle.addEventListener(event, function (e) {
+            const target = e.target;
+            // Get the `maxlength` attribute
+            const maxLength = 800;
+            // Count the current number of characters
+            const currentLength = target.value.length;
+            counterEle.innerHTML = `${currentLength}/${maxLength}`;
+            if (currentLength < 300) {
+                counterEle.style.color = "red";
+            }
+            else if (currentLength => 300 && currentLength <= 800 ) {
+               counterEle.style.color = "green";
+            } else {
+               counterEle.style.color = "black";
+            }
+              });
+            })
+        </script>
+{% endblock %}
