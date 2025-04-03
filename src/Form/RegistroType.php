@@ -97,16 +97,16 @@ class RegistroType extends AbstractType
             ])
             ->add('curso1',ChoiceType::class, [
                 'choices'  => [
-                    'C3-Contando simetrías' => 'C3',
-                    'C4-Medida y categoría en la recta real' => 'C4',
+                    'C3-Un toro con su mapa incursionando en el análisis matemático' => 'C3',
+                    'C4-Introducción a la combinatoria topológica' => 'C4',
 
                 ],
                 'placeholder' => 'Seleccionar',
             ])
             ->add('curso2',ChoiceType::class, [
                 'choices'  => [
-                    'C5-Geometría y topología mediante el uso del álgebra'=>'C5',
-                    'C6-Ultrafiltros en las matemáticas' => 'C6',
+                    'C5-Las sumas trigonométricas y aplicaciones'=>'C5',
+                    'C6-El fenómeno de continuidad automática' => 'C6',
 
                 ],
                 'placeholder' => 'Seleccionar',
