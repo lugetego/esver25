@@ -10,7 +10,7 @@
         <h4 class="mb-3">Personas aceptadas</h4>
 
         {% for registro in registros %}
-            <li class="list-group-item">{{ registro.paterno ~ ' ' ~ registro.materno ~ ' ' ~ registro.nombre | title }}</li>
+            <li class="list-group-item">{{ registro.paterno|title  ~ ' ' ~ registro.materno|title  ~ ' ' ~ registro.nombre|title }}</li>
         {% endfor %}
     </ul>
 
