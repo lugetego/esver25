@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ evento }}{% endblock %}
+
+
+{% block body %}
+
+
+    <ul class="mt-4 list-group container">
+        <h4 class="mb-3">Personas aceptadas</h4>
+
+        {% for registro in registros %}
+            <li class="list-group-item">{{ registro.paterno ~ ' ' ~ registro.materno ~ ' ' ~ registro.nombre }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
